@@ -1,0 +1,56 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 43.2em 196.8em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .icon.box:before {
+      background-position: 0em 0em;
+      width: 14.1em;
+      height: 51.2em;
+  }
+
+
+
+
+  .icon.credit-card:before {
+      background-position: 0em -51.2em;
+      width: 14.1em;
+      height: 51.2em;
+  }
+
+
+
+
+  .icon.return:before {
+      background-position: 0em -102.4em;
+      width: 43.2em;
+      height: 43.2em;
+  }
+
+
+
+
+  .icon.shield:before {
+      background-position: 0em -145.6em;
+      width: 14.1em;
+      height: 51.2em;
+  }
+
+
+
+
+

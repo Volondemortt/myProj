@@ -1,0 +1,24 @@
+mixin comment(item, num, parentNum, parentUser)
+  +b('li').comment
+    if item.userPic
+      +e.img
+        img(src=item.userPic)
+    - var currIndex = num + 1 + '.'
+    if parentNum
+      - currIndex = parentNum + currIndex
+    +e.title
+      +e('span').num= currIndex
+      +e('span').name= ' ' + item.userName
+      if parentUser
+        |  > 
+        span.comment__parent-name= parentUser
+    +e.date= item.date
+    +e.text!= item.comment
+    +e.links
+      +e.link._reply(href="#") reply
+      |  
+      +e.link._share(href="#") share
+    if (item.children)
+      +b('ul').is-children
+        each child, i in item.children
+          +comment(child, i, currIndex, item.userName)

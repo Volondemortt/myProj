@@ -1,5 +1,58 @@
 extends layouts/root
 
 block content
-	+header('Yo!')
-	h2 test1234
+  +header()
+  -
+    var param = 10
+    param = 20
+    var comments = [
+      {
+        userName: 'DinosaurFaceOverlord',
+        userPic: 'https://placehold.it/80x110&text=Look at me!',
+        date: '14 days ago',
+        comment: 'Three cheers for bert! <br> Hip hip..',
+        children: [
+          {
+            userName: 'stetsonaw',
+            date: '14 days ago',
+            comment: 'Three cheers for bert! <br> Hip hip..'
+          },
+          {
+            userName: 'katkelly57',
+            date: '14 days ago',
+            comment: 'Three cheers for bert! <br> Hip hip..',
+            children: [
+              {
+                userName: 'DinosaurFaceOverlord',
+                date: '14 days ago',
+                comment: 'Three cheers for bert! <br> Hip hip..'
+              }
+            ]
+        },
+        {
+          userName: 'Well meaning',
+          date: '14 days ago',
+          comment: 'Three cheers for bert! <br> Hip hip..'
+        }
+        ]
+      },
+      {
+        userName: 'AlfondoGonz',
+        userPic: 'https://placehold.it/80x110&text=Look at me!',
+        date: '14 days ago',
+        comment: 'Three cheers for bert! <br> Hip hip..'
+      },
+      {
+        userName: 'ShadrachSmith',
+        userPic: 'https://placehold.it/80x110&text=Look at me!',
+        date: '14 days ago',
+        comment: 'Three cheers for bert! <br> Hip hip..'
+      }
+    ];
+  +b('ul').comments-list
+    each val, index in comments
+      +comment(val, index)
+  form
+    .form-group
+      label.control-label(for="test-input") test
+      input.form-control#test-input(type="text")
