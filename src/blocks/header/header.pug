@@ -1,0 +1,13 @@
+mixin header(title)
+	+b.header
+		+e('a').title._white(href="https://google.com")= title
+		+e('ul').list
+			+e.item
+				+e.link(href="/")
+			+e.item
+			+e.item._super
+			+e.item
+		+e.logo(src="//google.com/logo.png")
+		
+
+
