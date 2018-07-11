@@ -2,57 +2,40 @@ extends layouts/root
 
 block content
   +header()
-  -
-    var param = 10
-    param = 20
-    var comments = [
-      {
-        userName: 'DinosaurFaceOverlord',
-        userPic: 'https://placehold.it/80x110&text=Look at me!',
-        date: '14 days ago',
-        comment: 'Three cheers for bert! <br> Hip hip..',
-        children: [
-          {
-            userName: 'stetsonaw',
-            date: '14 days ago',
-            comment: 'Three cheers for bert! <br> Hip hip..'
-          },
-          {
-            userName: 'katkelly57',
-            date: '14 days ago',
-            comment: 'Three cheers for bert! <br> Hip hip..',
-            children: [
-              {
-                userName: 'DinosaurFaceOverlord',
-                date: '14 days ago',
-                comment: 'Three cheers for bert! <br> Hip hip..'
-              }
-            ]
-        },
-        {
-          userName: 'Well meaning',
-          date: '14 days ago',
-          comment: 'Three cheers for bert! <br> Hip hip..'
-        }
-        ]
-      },
-      {
-        userName: 'AlfondoGonz',
-        userPic: 'https://placehold.it/80x110&text=Look at me!',
-        date: '14 days ago',
-        comment: 'Three cheers for bert! <br> Hip hip..'
-      },
-      {
-        userName: 'ShadrachSmith',
-        userPic: 'https://placehold.it/80x110&text=Look at me!',
-        date: '14 days ago',
-        comment: 'Three cheers for bert! <br> Hip hip..'
-      }
-    ];
-  +b('ul').comments-list
-    each val, index in comments
-      +comment(val, index)
-  form
-    .form-group
-      label.control-label(for="test-input") test
-      input.form-control#test-input(type="text")
+  h5 Виберіть категорію
+  .section
+    .col.s12
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object.png")
+          h6 Автотранспорт
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object6.png")
+          h6 Будівництво, архітектура, землекористування
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object3.png")
+          h6 Громадянство
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object2.png")
+          h6 Захист прав дитини
+  .section
+    .col.s12
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object7.png")
+          h6 Реєстрація місця проживання/перебування
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object5.png")
+          h6 Підприємницька діяльність
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object4.png")
+          h6 Санітарне та епідемічне благополуччя, ветеринарна медицина
+      .col.s3
+        .card
+          img(src="./assets/img/Vector_Smart_Object1.png")
+          h6 Комунальне господарство
